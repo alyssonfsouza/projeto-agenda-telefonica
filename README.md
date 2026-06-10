@@ -87,17 +87,3 @@ Com o banco criado, a senha configurada e o driver adicionado:
 | Remover   | Exclui um contato do banco       |
 
 ---
-
-## 📁 Estrutura do Projeto
-
-```
-projeto-agenda/
-├── src/
-│   ├── Agenda.java        # Ponto de entrada — menu interativo
-│   ├── ConexaoDB.java     # Configuração da conexão JDBC
-│   ├── Contato.java       # Modelo de dados
-│   └── AgendaTelefonica.java    # Operações CRUD no banco
-└── README.md
-```
-
----
