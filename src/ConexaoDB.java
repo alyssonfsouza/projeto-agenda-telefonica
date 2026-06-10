@@ -3,14 +3,14 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class ConexaoDB {
-    // 1. A URL agora usa 'mysql' e a porta '3306'
+
+    // Dados de conexão com o banco MySQL
+
     private static final String URL = "jdbc:mysql://localhost:3306/projeto_agenda"; 
     
-    // 2. O usuário padrão do MySQL é 'root'
     private static final String USER = "root"; 
-    
-    // 3. Aqui fica a mesma senha que você digita para abrir o HeidiSQL
-    private static final String PASSWORD = "senha"; 
+
+    private static final String PASSWORD = "sua_senha"; 
 
     public static Connection conectar() {
         try {

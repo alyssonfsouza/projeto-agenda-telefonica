@@ -25,10 +25,8 @@ public class Agenda {
                         System.out.print("Digite o nome: ");
                         String nomeDigitado = leitor.nextLine();
 
-                        // 1. Verifica se o nome ja existe no banco
                         if (agenda.existeContato(nomeDigitado)) {
-                            System.out.println();
-                            System.out.println("O contato '" + nomeDigitado + "' ja existe!");
+                            System.out.println("\nO contato '" + nomeDigitado + "' ja existe!");
                             System.out.print("Deseja atualizar os dados deste contato? (S/N): ");
                             
                             String resposta = leitor.nextLine();
@@ -37,15 +35,13 @@ public class Agenda {
                             }
 
                             if (resposta.equalsIgnoreCase("S")) {
-                                System.out.println();
-                                System.out.println("Retornando ao menu. Escolha a opcao de busca (3) para atualizar usando o ID.");
-                                break; // Sai do case 1 e volta para as opcoes do menu
+                                System.out.println("\nRetornando ao menu. Escolha a opcao de busca (3) para atualizar usando o ID.");
+                                break;
                             } else {
                                 System.out.println("Operacao de cadastro cancelada.");
                                 break;
                             }
                         } else {
-                            // 2. Se o nome NAO existe e nao e vazio, segue o cadastro normal
                             if (nomeDigitado.trim().isEmpty()) {
                                 System.out.println("Erro: O nome nao pode ser vazio.");
                                 break;
@@ -60,7 +56,6 @@ public class Agenda {
                             System.out.print("Email: ");
                             novoContato.setEmail(leitor.nextLine());
 
-                            // Salva no banco
                             agenda.adicionarContato(novoContato);
                         }
                         break;
@@ -75,15 +70,12 @@ public class Agenda {
                         String nomeBusca = leitor.nextLine();
                         System.out.println();
 
-                        // Primeiro, busca e mostra os dados atuais (retorna true se achou)
                         boolean encontrou = agenda.buscarContato(nomeBusca);
 
-                        // Verifica se ele existe para oferecer a atualizacao
                         if (encontrou) {
                             System.out.print("Deseja atualizar algum destes contatos? (S/N): ");
                             String opc = leitor.nextLine();
                             
-                            // Trava de seguranca do Scanner
                             if (opc.trim().isEmpty()) {
                                 opc = leitor.nextLine();
                             }
@@ -105,7 +97,6 @@ public class Agenda {
                                 contatoAtualizado.setEmail(leitor.nextLine());
                                 System.out.println();
 
-                                // Chama o metodo de atualizacao passando o ID exato
                                 agenda.atualizarContato(idSelecionado, contatoAtualizado);
                             } else {
                                 System.out.println("Busca finalizada.");
@@ -120,17 +111,15 @@ public class Agenda {
                         break;
 
                     case 5:
-                        System.out.println();
-                        System.out.println("Encerrando sistema...");
+                        System.out.println("\nEncerrando sistema...");
                         break;
 
                     default:
-                        System.out.println();
-                        System.out.println("Opcao invalida!");
+                        System.out.println("\nOpcao invalida!");
                 }
             } catch (Exception e) {
                 System.out.println("Erro: Digite apenas numeros onde for solicitado.");
-                leitor.nextLine(); // Limpa o buffer caso o erro seja na digitacao
+                leitor.nextLine(); // Limpa o buffer
             }
         } while (opcao != 5);
 

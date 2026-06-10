@@ -1,9 +1,9 @@
 # 📒 Projeto Agenda Telefônica — Projeto Integrador II-A
 
-**Desenvolvido por:** Alysson F. de Souza
-**Disciplina:** Análise e Desenvolvimento de Sistemas
-**Instituição:** PUC Goiás
-**Ano:** 2026
+- **Desenvolvido por:** Alysson F. de Souza
+- **Disciplina:** Análise e Desenvolvimento de Sistemas
+- **Instituição:** PUC Goiás
+- **Ano:** 2026
 
 ---
 
@@ -41,7 +41,14 @@ CREATE TABLE contatos (
     telefone  VARCHAR(20)  NOT NULL,
     email     VARCHAR(100) NOT NULL
 );
-```
+
+-- Insere 5 contatos iniciais para teste (Database Seeding)
+INSERT INTO contatos (nome, telefone, email) VALUES 
+('João Silva', '(62) 99999-1111', 'joao.silva@email.com'),
+('Maria Oliveira', '(62) 98888-2222', 'maria.oliveira@email.com'),
+('Carlos Santos', '(62) 97777-3333', 'carlos.santos@email.com'),
+('Ana Souza', '(62) 96666-4444', 'ana.souza@email.com'),
+('Alysson Master', '(62) 95555-5555', 'alysson@gmail.com.br');
 
 ---
 
